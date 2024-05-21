@@ -1,0 +1,527 @@
+:root {
+    --primary: #37B9F1;
+    --main-color: rgb(0, 251, 255);
+    --bg: #010101;
+    --second-bg-color: #f2f5f5;
+    --secondary: #8739F9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+    height: 3000px;
+}
+
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(1, 1, 3, 0.8);
+    border-bottom: 1px solid var(--main-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo img {
+    width: 55px;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;    
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: #fff;
+    margin: 0 0.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+
+#hamburger-menu {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg);
+    background-image: url(../img/sunset-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 8%, rgba(255, 255, 255, 0) 50%);
+}
+
+.hero .content {
+    padding: 1.4rem;
+    max-width: 60rem;
+}
+
+.hero .content .typing-animation-1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+    overflow: hidden; /* Membatasi teks agar tidak keluar dari kotaknya */
+    white-space: nowrap; /* Mencegah pemisahan baris */
+    margin: 0 auto; /* Posisi teks ke tengah */
+    letter-spacing: 0; /* Jarak antar huruf */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Animasi ketikan dan efek kursor */
+    
+}
+
+.hero .content .typing-animation-2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+    overflow: hidden; /* Membatasi teks agar tidak keluar dari kotaknya */
+    white-space: nowrap; /* Mencegah pemisahan baris */
+    margin: 0 auto; /* Posisi teks ke tengah */
+    letter-spacing: 0em; /* Jarak antar huruf */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Animasi ketikan dan efek kursor */
+
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* Keyframes untuk efek kursor */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+.hero .content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 200;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* Ringkasan Section */
+.ringkasan, 
+.sejarah,
+.struktur,
+.wilayah,
+.disawotratap {
+    padding: 8rem 7% 1.4rem;
+}
+
+.ringkasan h2, 
+.sejarah h2,
+.struktur h2, 
+.wilayah h2,
+.disawotratap h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.ringkasan h2 span, 
+.sejarah h2 span,
+.struktur h2 span,
+.wilayah h2 span,
+.disawotratap h2 span {
+    color: var(--primary);
+}
+
+/* Data Penduduk */
+.chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Sejarah Desa */
+.sejarah .row {
+    display: flex;
+}
+
+.sejarah .row .sejarah-img {
+    flex: 1 1 45rem;
+}
+
+.sejarah .row .sejarah-img img {
+    width: 100%;
+}
+
+.sejarah .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.sejarah .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.sejarah .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+  
+
+/* Wilayah */
+.sejarah h2,
+.struktur h2, 
+.wilayah h2 {
+    margin-bottom: 1rem;
+}
+
+.struktur p, 
+.wilayah p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.struktur .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.wilayah .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+}
+
+.wilayah .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wilayah .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.wilayah .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.wilayah .row form .input-group input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+    color: #fff;
+}
+
+.wilayah .row form .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+/* Struktur Pemerintahan */
+.structure-img {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Ada Apa Di Sawotratatap */
+.disawotratap h2 {
+    margin-bottom: 1rem;
+}
+
+.disawotratap .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.disawotratap .row .menu-card {
+    text-align: center;
+    margin-top: 4rem;
+    max-width: 20%;
+    margin: auto;
+    margin: 1rem;
+}
+
+.disawotratap .row .menu-card img {
+    border-radius: 10%;
+    width: 100%;
+}
+
+.disawotratap .row .menu-card .menu-card-title {
+    margin: 1rem auto 0.5rem;
+}
+
+.disawotratap p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .socials {
+    padding: 1rem 0;
+}
+
+footer .socials a {
+    color: #fff;
+    margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+    color: var(--bg);
+}
+
+footer .links {
+    margin-bottom: 1.4rem;
+}
+
+footer .links a {
+    color: #fff;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    font-size: 0.8rem;
+}
+
+footer .credit a {
+    color: var(--bg);
+    font-weight: 700;
+}
+
+
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover:after {
+        transform: scaleX(0.2);
+    }
+
+    .sejarah .row {
+        flex-wrap: wrap;
+    }
+
+    .sejarah .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .sejarah .row .content {
+        padding: 0;
+    }
+
+    .sejarah .row .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .sejarah .row .content p {
+        font-size: 1.6rem;
+    }
+
+    .disawotratap .row {
+        justify-content: space-around;
+    }
+
+    .disawotratap .row .menu-card {
+        max-width: 30%;
+    }
+
+    .struktur p {
+        font-size: 1.2rem;
+    }
+
+    .structure-img img {
+        max-width: 75%;
+    }
+
+    .wilayah .row {
+        flex-wrap: wrap;
+    }
+
+    .wilayah .row .map {
+        height: 30rem;
+    }
+
+    .wilayah .row form {
+        padding-top: 2rem;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    .disawotratap .row .menu-card {
+        max-width: none;
+        padding-top: 3rem;
+    }
+
+    .structure-img img {
+        max-width: 75%;
+    }
+}

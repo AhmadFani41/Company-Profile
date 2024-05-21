@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Sawotratap</title>
+    
+    <!-- FONT FAMILY -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- FEATHER ICONS -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- MY STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+        <a href="beranda.html" class="navbar-logo">
+            <img src="./img/logo-PD.png" alt="logo">  
+            Desa<span>Sawotratap</span>
+        </a>
+
+        <div class="navbar-nav">
+            <a href="#">Beranda</a>
+            <a href="profile.html">Profil Desa</a>
+            <a href="about.html">Tentang Desa</a>
+            <a href="galeri.html">Galeri</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="log-in"><i data-feather="log-in"></i>Log In</a>
+            <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
+
+    <!-- HERO SECTION START -->
+    <section class="hero" id="home">
+        <main class="content">
+            <h1 class="typing-animation-1">Selamat Datang di Website Resmi</h1>
+            <h1 class="typing-animation-2">Desa Sawotratap</h1>
+            <p>Kec. Gedangan, Kab. Sidoarjo</p>
+        </main>
+    </section>
+    <!-- HERO SECTION END -->
+
+    <!-- SEJARAH DESA SECTION START -->
+    <section class="sejarah" id="sejarah">
+        <h2><span>Sejarah </span>Desa</h2>
+
+        <div class="row">
+            <div class="sejarah-img">
+                <img src="img/sejarah-desa.jpg" alt="sejarah">
+            </div>
+            <div class="content">
+                <h3>Asal-usul Desa Sawotratap</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sunt ab natus, perferendis eum quia.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sunt ab natus, perferendis eum quia.</p>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- SEJARAH DESA SECTION END -->
+
+    <!-- RINGKASAN SECTION START -->
+    <section class="ringkasan" id="ringkasan">
+        <h2>Data <span>Penduduk</span></h2>
+        
+        <div class="chart-container">
+            <canvas id="populationChart"></canvas>
+        </div>
+
+    </section>
+    <!-- RINGKASAN SECTION END -->
+
+
+    <!-- Footer Start -->
+    <footer>
+        <div class="socials">
+            <a href="#"><i data-feather="instagram"></i></a>
+            <a href="#"><i data-feather="twitter"></i></a>
+            <a href="#"><i data-feather="facebook"></i></a>
+            <a href="#"><i data-feather="youtube"></i></a>
+        </div>
+
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="about.html">About</a>
+            <a href="galeri.html">Galeri</a>
+        </div>
+
+        <div class="credit">
+            <p>Jl.Hayam Wuruk 1 No. 8 Kec. Gedangan Kab. Sidoarjo, 61254</p>
+            <p>No. Telp 012345678 | &copy;2024</p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    <!-- FEATHER ICONS -->
+    <script>
+        feather.replace();
+    </script>
+
+    <!-- My Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
